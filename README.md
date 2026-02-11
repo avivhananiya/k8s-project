@@ -71,13 +71,13 @@ WordPress:
 - and access via http://<EC2-IP>:8080.
 
 Grafana:
-- Run
-```console
-  kubectl port-forward --address 0.0.0.0 -n monitoring service/prometheus-stack-grafana 3000:80.
-```
 - Retrieve the admin password:
 ```console
   kubectl get secret --namespace monitoring prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+- Run
+```console
+  kubectl port-forward --address 0.0.0.0 -n monitoring service/prometheus-stack-grafana 3000:80.
 ```
 - Access via http://<EC2-IP>:3000 (User: admin).
 
