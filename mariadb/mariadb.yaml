@@ -36,7 +36,7 @@ spec:
         app: mariadb
     spec:
       imagePullSecrets:
-      - name: ecr-registry-key
+      - name: regcred
       containers:
       - name: mariadb
         image: 992382545251.dkr.ecr.us-east-1.amazonaws.com/mariadb-aviv:10.6.4-focal
